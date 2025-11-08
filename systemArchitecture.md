@@ -1,24 +1,37 @@
-### System Architecture - Chop Rush
+# System Architecture - Chop Rush
 
-The Chop Rush system is built using a three-tier architecture consisting of the frontend, backend, and database layers.
+## Overview
+Chop Rush uses a three-tier architecture:
+1. **Frontend** – The mobile app interface users interact with.
+2. **Backend** – The server that handles orders, payments, and meal listings.
+3. **Database** – Stores user profiles, vendor menus, and order history.
 
-1. **Frontend:** 
-   - Built with React for web and Flutter for mobile apps.
-   - Provides interfaces for customers, restaurants, and delivery riders to interact with the system.
+## Frontend
+- Built with **React Native** for cross-platform use.
+- Communicates with the backend using REST APIs.
+- Displays real-time meal availability and order status.
 
-2. **Backend:** 
-   - Developed using Node.js 
-   - Handles authentication, order management, payment processing, and communication between users, restaurants, and riders through RESTful APIs.
+## Backend
+- Built using **Node.js** and **Express**.
+- Handles authentication, payments, and meal listings.
+- Sends push notifications for new meal availability.
 
-3. **Database:**
-   - MYSQL stores user data, menus, restaurant information, and order details.
+## Database
+- **MongoDB** for flexible storage of user and vendor data.
+- Includes collections for:
+  - Users
+  - Vendors
+  - Meals
+  - Orders
+  - Payments
 
-4. **Paypal Payment:**
-   - Integrated with Paypal for securing online payment.
+## Communication Between Components
+1. User opens the app (frontend) → requests meal data via API.
+2. Backend processes the request → fetches from MongoDB.
+3. Data sent back → frontend displays meals available.
+4. On order, backend updates the order status → rider gets notified.
 
-**Communication Flow:**
-- Customers place orders through the frontend.
-- The backend processes the order and stores details in the database.
-- Restaurants receive order notifications.
-- Once food is ready, a rider is assigned.
-- After delivery, order status is updated and visible to the customer
+## Why This Architecture is Feasible
+- Scalable: Each layer (frontend, backend, database) can grow independently.
+- Reliable: Using cloud-based hosting ensures uptime.
+- Fast: REST API design supports real-time data.
