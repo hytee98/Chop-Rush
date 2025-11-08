@@ -1,4 +1,4 @@
-CHOP RUSH
+### CHOP RUSH
 What the product does
 Chop Rush is a food delivery\hyper local app that connects users or customers  with meals already being prepared nearby. 
 Instead of waiting for restaurants to start preparing food after an order, users can instantly order from a list vof ready to go meals.
