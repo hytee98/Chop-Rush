@@ -21,4 +21,4 @@ The Chop Rush system is built using a three-tier architecture consisting of the 
 - The backend processes the order and stores details in the database.
 - Restaurants receive order notifications.
 - Once food is ready, a rider is assigned.
-- After delivery, order status is updated and visible to the customer.
+- After delivery, order status is updated and visible to the customer
